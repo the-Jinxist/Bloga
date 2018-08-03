@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="460dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@color/colorPrimary"
+    >
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:mrl_rippleColor="@color/colorAccent"
+
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="10dp"
+                android:id="@+id/event_user_image"
+                android:src="@drawable/placeholder"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/event_user_image"
+                android:layout_alignBaseline="@id/event_user_image"
+                android:layout_alignTop="@id/event_user_image">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/event_user_name"
+
+                    android:layout_marginBottom="15dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/event_user_name"
+                    android:layout_margin="7dp"
+                    android:text="|"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/name_time_sep"
+                    android:textColor="#000"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="24m"
+                    android:id="@+id/post_time"
+                    android:layout_centerVertical="true"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:layout_toEndOf="@id/name_time_sep"
+                    android:layout_alignTop="@id/name_time_sep"/>
+
+
+
+            </RelativeLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/generate_share_link"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_share_black_24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="15dp"/>
+
+
+
+            <ImageView
+                android:id="@+id/event_image_poster"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/event_user_image"
+                android:src="@drawable/event_placeholder"
+                android:scaleType="centerCrop"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/event_name_layout"
+                android:layout_below="@id/event_image_poster">
+                <ImageView
+                    android:layout_margin="5dp"
+                    android:id="@+id/event_name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_info_outline_black_24dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The Death Stranding Reveal Trailer"
+                    android:textSize="15sp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/event_name"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="#000"
+                    android:layout_toEndOf="@id/event_name_label"
+                    android:layout_alignTop="@id/event_name_label"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/event_calendar_layout"
+                android:layout_below="@+id/event_name_layout"
+                >
+
+                <ImageView
+                    android:layout_margin="5dp"
+                    android:id="@+id/event_time_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_date_range_black_24dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="1st of February, 2018"
+                    android:id="@+id/event_time"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toEndOf="@id/event_time_label"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:id="@+id/event_desc_layout"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_calendar_layout"
+                >
+
+                <ImageView
+                    android:layout_margin="5dp"
+                    android:id="@+id/event_desc_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more_horiz_black_24dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/event_desc"
+                    android:textSize="15sp"
+                    android:layout_centerVertical="true"
+                    android:textColor="#000"
+                    android:layout_marginEnd="10dp"
+                    android:text="The announcement of the fourth installment in the death stranding series.."
+                    android:layout_toEndOf="@id/event_desc_label"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:id="@+id/event_location_layout"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/event_desc_layout"
+                >
+
+                <ImageView
+                    android:layout_margin="5dp"
+                    android:id="@+id/event_location_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_location_on_black_24dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/event_location"
+                    android:textSize="15sp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="#000"
+                    android:text="PlayStation S.A"
+                    android:layout_toEndOf="@id/event_location_label"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/viewmore_layout"
+                android:layout_marginBottom="5dp"
+                android:layout_below="@id/event_location_layout"
+                android:layout_marginEnd="20dp">
+
+                <ImageView
+                    android:id="@+id/viewmore_label"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_launch_black_24dp"
+                    android:layout_centerVertical="true"
+                    android:tint="#a1a1a1"
+                    android:layout_marginEnd="5dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Click to view more.."
+
+                    android:textColor="#a1a1a1"
+                    android:gravity="center"
+                    android:layout_toEndOf="@id/viewmore_label"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/viewholder_sep"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#a1a1a1"
+              android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                />
+
+        </RelativeLayout>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+
+
+</RelativeLayout>

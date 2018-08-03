@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/events_loading_layout"
+        android:background="#fff">
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:layout_centerInParent="true"
+
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/events_recycler_layout"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:indeterminate="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:indeterminateBehavior="cycle"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/events_swipe_to_refresh">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/events_recycler"/>
+
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/add_events_btn"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_black_24dp"
+            android:tint="#fff"
+            app:fabSize="normal"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            />
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/events_getstarted_layout"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/events_instros"
+            android:src="@drawable/clink"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:id="@+id/events_instros"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:text="The events section gives an acute knowledge of all the happenings in your college!!"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonbg"
+            android:text="GET STARTED!"
+            android:id="@+id/get_started_button"
+            android:textColor="#fff"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#97000000"
+        android:id="@+id/select_school_layout"
+        android:visibility="gone"
+
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:elevation="10dp"
+                >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_close_black_24dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/close_school_layout"
+                    android:layout_margin="10dp"
+                    />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:id="@+id/school_clip"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_school_black_24dp"
+                    android:layout_marginTop="10dp"/>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/school_instros"
+                    android:layout_height="wrap_content"
+                    android:text="For now we only support FUTA.."
+                    android:layout_below="@id/school_clip"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerHorizontal="true"/>
+
+
+                <TextView
+                    android:id="@+id/futa_events_text"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="FUTA"
+                    android:gravity="center"
+                    android:layout_below="@id/school_instros"
+                    android:layout_marginBottom="20dp"
+                    android:padding="10dp"
+                    android:textSize="17sp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/school_bg"
+                    android:textColor="#000"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

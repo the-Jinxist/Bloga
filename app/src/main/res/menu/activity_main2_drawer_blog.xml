@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_action_description"
+            android:title="Eventss" />
+
+        <item
+            android:id="@+id/nav_community"
+            android:icon="@drawable/ic_paper_plane"
+            android:title="Community" />
+
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_action_person"
+            android:title="Sign Out" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_action_settings"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/ic_action_help"
+            android:title="Contact us" />
+
+    </group>
+
+
+</menu>

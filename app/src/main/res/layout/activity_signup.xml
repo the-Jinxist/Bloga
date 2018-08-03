@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/colorPrimary"
+    tools:context="com.example.user.blogga.Activities.SignupActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/bloga_signup_logo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_support"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"/>
+        <TextView
+            android:id="@+id/signup_instructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_up_instructions"
+            android:layout_below="@id/bloga_signup_logo"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signup_email_layout"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/signup_instructions"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:textColorHint="#484848"
+            >
+            <EditText
+                android:id="@+id/signup_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/email_address"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#484848"
+                android:backgroundTint="#000"
+                android:textColor="#000"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signup_password_layout"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/signup_email_layout"
+            android:layout_height="wrap_content"
+            android:textColorHint="#484848"
+            >
+            <EditText
+                android:id="@+id/signup_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:backgroundTint="#000"
+                android:textColor="#000"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signup_confpassword_layout"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/signup_password_layout"
+            android:layout_height="wrap_content"
+            android:textColorHint="#484848"
+
+            >
+            <EditText
+                android:id="@+id/signup_confpassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:backgroundTint="#000"
+                android:textColor="#000"
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/signup_button2"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/buttonbg"
+            android:text="@string/sign_up"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+
+
+    <ProgressBar
+        android:id="@+id/signup_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
+

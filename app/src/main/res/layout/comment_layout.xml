@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="7dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/comment_user_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/placeholder"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/comment_user_displayname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_alignTop="@id/comment_user_image"
+        android:layout_toEndOf="@id/comment_user_image"
+        android:text="Display name"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/comment_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comment_user_displayname"
+        android:layout_toEndOf="@id/comment_user_image"
+        android:text="Comment..."
+
+        />
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>

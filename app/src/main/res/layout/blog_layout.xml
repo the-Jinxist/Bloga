@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/blog_layout_user_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/blog_layout_user_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chill" />
+
+        <TextView
+            android:id="@+id/blog_layout_user_display_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/blog_layout_user_image"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@+id/blog_layout_user_image"
+            android:text="Ava"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blog_layout_user_display_name"
+            android:layout_marginStart="7dp"
+            android:layout_toEndOf="@+id/blog_layout_user_image"
+            android:text="2mins"
+            android:textColor="#000"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/blog_post_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blog_layout_user_details">
+
+        <TextView
+            android:id="@+id/blog_layout_text_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="This is one of the best apps in our generations and its a priviledge to be a apart of it.."
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/blog_layout_image_post"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@id/blog_layout_text_post"
+            android:maxHeight="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chill" />
+
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/blog_post_layout">
+
+        <ImageButton
+            android:id="@+id/like_blog_image_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_action_unliked" />
+
+        <TextView
+            android:id="@+id/like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/like_blog_image_button"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            android:text=""
+            android:gravity="center"
+            android:textSize="20sp"
+            />
+
+        <ImageButton
+            android:id="@+id/comment_blog_image_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@id/like_blog_image_button"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/like_count"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_action_unmessaged" />
+
+        <TextView
+            android:id="@+id/comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/comment_blog_image_button"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            android:text=""
+            android:gravity="center"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</android.support.v7.widget.CardView>

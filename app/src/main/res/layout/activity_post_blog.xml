@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.blogga.Activities.PostBlogActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/blog_post_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="Add post"
+        android:theme="@style/NonToolBarTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/blog_post_toolbar"
+        android:layout_above="@id/add_blog_post_btn"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/blog_post_toolbar"
+            android:layout_above="@id/add_blog_post_btn"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/blog_post_picture_instructuions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="17sp"
+                android:text="Click the image below to select your custom image"
+                android:gravity="center"
+                />
+
+            <ImageView
+                android:id="@+id/blog_post_picture"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/blog_post_picture_instructuions"
+                android:src="@drawable/placeholderblogimage"
+                android:scaleType="centerCrop"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/blog_post_text_layout"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/blog_post_picture"
+                android:layout_height="wrap_content"
+
+                >
+                <EditText
+                    android:id="@+id/blog_post_edittext"
+                    android:layout_width="match_parent"
+                    android:inputType="textMultiLine"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="Blog post.."
+                    android:backgroundTint="@color/colorAccent"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+    <Button
+        android:id="@+id/add_blog_post_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorAccent"
+        android:text="ADD POST"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

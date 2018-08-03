@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chatbg"
+    tools:context="com.example.user.blogga.Activities.ChatActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_toolbar"
+        android:layout_above="@+id/message_lin_layout"
+        android:padding="5dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/message_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/Theme.AppCompat.Light"
+        >
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/back_to_main"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_action_back"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:id="@+id/user_chat_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="11dp"
+                android:layout_toEndOf="@+id/user_chat_image"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#fff"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/user_chat_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Online"
+                android:textColor="#fff"
+                android:layout_below="@+id/user_chat_name"
+                android:layout_marginStart="11dp"
+                android:layout_toEndOf="@+id/user_chat_image"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_chat_image"
+                android:layout_width="50dp"
+                android:layout_toEndOf="@+id/back_to_main"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_centerVertical="true"
+                android:layout_height="match_parent"
+                android:src="@drawable/placeholder"
+                android:layout_weight="4"/>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/message_lin_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/message_layout"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="7dp"
+        android:elevation="5dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/message_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:hint="Say something funny.."
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp"
+            android:background="@android:color/transparent"
+            android:layout_margin="3dp"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/send_message_button"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="0"
+            android:src="@drawable/ic_paper_plane"
+           android:background="@android:color/transparent"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

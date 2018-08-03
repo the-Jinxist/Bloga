@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Bloga</string>
+    <string name="login">LOG IN</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="need_a_new_account_sign_up">Need a new Account? Sign Up!</string>
+    <string name="log_in">LOG IN</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_up">Sign Up!</string>
+    <string name="bio">Tell us something about you</string>
+    <string name="sign_in_two">Sign In</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="display_name">Display Name</string>
+    <string name="profile_settings">Profile settings</string>
+    <string name="other_settings">Other settings</string>
+    <string name="profile_instructions">Create a custom display name and status</string>
+    <string name="sign_up_instructions">Please fill in your preferred email and password</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="request_hint">Requests should be here...</string>
+    <string name="community_instrustions">Your news feed is coming!</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>

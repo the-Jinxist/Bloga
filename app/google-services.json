@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "793372365732",
+    "firebase_url": "https://blogga-510f2.firebaseio.com",
+    "project_id": "blogga-510f2",
+    "storage_bucket": "blogga-510f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793372365732:android:78f387733f48095d",
+        "android_client_info": {
+          "package_name": "com.example.user.blogga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793372365732-uamqr1tptg0qjaml0bj60evtfr11mhca.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.blogga",
+            "certificate_hash": "b2bcdf26c76d60d61961115130797c874cabdccc"
+          }
+        },
+        {
+          "client_id": "793372365732-6bqldsm22tso5fl0mvdoq6j1f3kd2or0.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "793372365732-6bqldsm22tso5fl0mvdoq6j1f3kd2or0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtCS0R0q4_g_ZmMGAUZna7Ldw0GJBADSc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793372365732-6bqldsm22tso5fl0mvdoq6j1f3kd2or0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
