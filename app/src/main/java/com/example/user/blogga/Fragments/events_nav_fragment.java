@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Path;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -41,6 +43,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.Context.CONNECTIVITY_SERVICE;
 import static android.view.View.GONE;
 
 /**
@@ -62,13 +65,14 @@ public class events_nav_fragment extends Fragment {
     private ImageButton close_school_layout;
     private SwipeRefreshLayout swipe_refresh;
     private ProgressBar bar;
+    private View view;
 
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.nav_event_fragment, container, false);
+        view = inflater.inflate(R.layout.nav_event_fragment, container, false);
 
 
 
@@ -92,6 +96,15 @@ public class events_nav_fragment extends Fragment {
 
         events_recycler.setLayoutManager(new LinearLayoutManager(getContext()));
         events_recycler.setHasFixedSize(true);
+
+
+        if(!isConnected()){
+            Toast.makeText(getContext(), "You  are not connected. Please check network connection!", Toast.LENGTH_LONG)
+                    .show();
+        }
+
+        //TODO ADD DESCRIPTION PRONTO!! in event model
+
 
         swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -248,6 +261,18 @@ public class events_nav_fragment extends Fragment {
 
             }
         });
+    }
+
+    public boolean isConnected(){
+        ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo network_info = manager.getActiveNetworkInfo();
+
+        if(network_info != null &&  network_info.isConnected() ){
+            return true;
+        } else{
+            return  false;
+        }
+
     }
 
 

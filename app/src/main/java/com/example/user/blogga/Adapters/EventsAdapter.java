@@ -87,8 +87,8 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                builder.setView(share_view);
 
                final AlertDialog dialog = builder.create();
-                TextView copy_to_clip = dialog.findViewById(R.id.copy_to_clipboard);
-                TextView share_to = dialog.findViewById(R.id.share_to);
+                TextView copy_to_clip = share_view.findViewById(R.id.copy_to_clipboard);
+                TextView share_to = share_view.findViewById(R.id.share_to);
 
                 copy_to_clip.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -116,7 +116,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
                         share_intent.setAction(Intent.ACTION_SEND);
                         share_intent.putExtra(Intent.EXTRA_TEXT, BASE_URL+model_list.get(position).getPost_key());
                         share_intent.setType("text/plain");
-                        context.startActivity(Intent.createChooser(share_intent, "Share to.."));
+                        context.startActivity(Intent.createChooser(share_intent, "S"));
                     }
                 });
 

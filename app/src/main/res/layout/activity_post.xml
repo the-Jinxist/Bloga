@@ -55,7 +55,7 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/post_nested_view"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -71,7 +71,7 @@
                 android:background="@color/colorPrimary">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/event_desc_user_name"
+                    android:id="@+id/event_desc_user_image"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_alignParentStart="true"
@@ -83,8 +83,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:id="@+id/event_poster_name"
                     android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@id/event_desc_user_name"
+                    android:layout_toEndOf="@id/event_desc_user_image"
                     android:text="Username"
                     android:textColor="#000"
                     android:textSize="17sp" />
@@ -103,9 +104,10 @@
             <ImageView
                 android:id="@+id/event_desc_event_image"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/event_desc_user_info"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
+                android:background="@android:color/transparent"
                 android:src="@drawable/placeholderblogimage" />
 
             <RelativeLayout
@@ -201,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/event_desc_event_desc_layout"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="100dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp">
                 <ImageView
