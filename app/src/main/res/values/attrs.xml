@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="da">
+
+        <attr name="layout_colors" format="color"/>
+        <attr name="backgroundColors" format="color"/>
+        <attr name="text_color" format="color"/>
+        <attr name="iconsTint" format="color"/>
+
+    </declare-styleable>
+
+</resources>

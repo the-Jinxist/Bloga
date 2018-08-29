@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/layout_colors"
     tools:context="com.example.user.blogga.Activities.AddEventsActivity">
 
 
@@ -47,8 +48,10 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="500dp"
                 android:id="@+id/inputs_layout"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_below="@id/image_layout">
 
                 <android.support.design.widget.TextInputLayout
@@ -56,8 +59,8 @@
                     android:id="@+id/add_event_edit_text_layout"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:hint="Event Title.."
 
                     >
@@ -67,9 +70,9 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/add_event_title"
                         android:textSize="15sp"
+                        android:textColor="?attr/text_color"
                         android:drawableStart="@drawable/ic_info_outline_black_24dp"
                         android:drawablePadding="10dp"
-                        android:textColor="#000"
                         android:inputType="textMultiLine"
                         android:backgroundTint="@color/colorAccent"/>
 
@@ -80,10 +83,9 @@
                     android:id="@+id/add_event_desc_layout"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/add_event_edit_text_layout"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:hint="Describe your event's location.."
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:hint="Give the particulars about your event. Ticket price, Dress code e.t.c"
 
                     >
 
@@ -93,7 +95,7 @@
                         android:id="@+id/add_event_desc"
                         android:drawableStart="@drawable/ic_more_horiz_black_24dp"
                         android:drawablePadding="10dp"
-                        android:textColor="#000"
+                        android:textColor="#fff"
                         android:textSize="15sp"
                         android:inputType="textMultiLine"
                         android:backgroundTint="@color/colorAccent"/>
@@ -105,9 +107,8 @@
                     android:id="@+id/add_event_location_layout"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/add_event_desc_layout"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:hint="Describe your event's location.."
 
                     >
@@ -130,9 +131,8 @@
                     android:id="@+id/add_event_date_layout"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/add_event_location_layout"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:hint="Your event's date and time.."
 
                     >

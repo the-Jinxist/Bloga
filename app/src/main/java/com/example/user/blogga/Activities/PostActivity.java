@@ -7,6 +7,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -35,9 +37,9 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        ActionBar bar = getSupportActionBar();
-        bar.setDisplayHomeAsUpEnabled(true);
-        bar.setTitle("Post");
+        Window window = getWindow();
+        window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
 
         error_layout = findViewById(R.id.error_layout);
         post_view = findViewById(R.id.post_nested_view);
@@ -58,10 +60,16 @@ public class PostActivity extends AppCompatActivity {
         String appLinkAction = appLinkIntent.getAction();
         Uri appLinkData = appLinkIntent.getData();
 
+
+
         if(appLinkData != null){
             final String key = appLinkData.getLastPathSegment();
 
             if(key != null){
+
+                post_view.setVisibility(View.VISIBLE);
+                loading_layout.setVisibility(View.GONE);
+
                 ref.child(key).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -73,6 +81,7 @@ public class PostActivity extends AppCompatActivity {
                            final String event_location = dataSnapshot.child("event_location").getValue().toString();
                            final String event_date = dataSnapshot.child("event_date").getValue().toString();
                            final String u_id = dataSnapshot.child("u_id").getValue().toString();
+                           final String event_desc = dataSnapshot.child("event_desc").getValue().toString();
                            final String post_key = dataSnapshot.getKey();
                            final String post_time = dataSnapshot.child("timestamp").getValue().toString();
                            final String event_image = dataSnapshot.child("event_image").getValue().toString();
@@ -88,6 +97,7 @@ public class PostActivity extends AppCompatActivity {
                                    event_desc_name.setText(event_title);
                                    event_desc_time.setText(event_date);
                                    event_desc_loacation.setText(event_location);
+                                   event_desc_desc.setText(event_desc);
 
                                    Picasso.get()
                                            .load(event_image)
@@ -118,15 +128,14 @@ public class PostActivity extends AppCompatActivity {
                     }
                 });
 
+            }else {
+
+                post_view.setVisibility(View.GONE);
+                loading_layout.setVisibility(View.GONE);
+                error_layout.setVisibility(View.VISIBLE);
             }
 
         }
 
-
-
-
-
-
-
-    }
+     }
 }

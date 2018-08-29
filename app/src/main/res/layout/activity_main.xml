@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/NonToolBarLightTheme"
     tools:context="com.example.user.blogga.Activities.MainActivity">
 
 
@@ -26,7 +27,7 @@
             android:id="@+id/home_toolbar"
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
-            android:theme="@style/NonToolBarTheme"
+            android:theme="@style/NonToolBarLightTheme"
             android:layout_height="match_parent"
             >
 
@@ -61,45 +62,6 @@
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
-
-
-
-
-
-    <!--<android.support.design.widget.TabLayout-->
-        <!--android:id="@+id/tabss"-->
-        <!--android:layout_below="@+id/main_appbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--app:tabTextColor="@color/hint_color"-->
-        <!--app:tabSelectedTextColor="@android:color/white"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@color/colorPrimary"-->
-       <!--&gt;-->
-
-        <!--<android.support.design.widget.TabItem-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--/>-->
-
-        <!--<android.support.design.widget.TabItem-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--/>-->
-
-        <!--<android.support.design.widget.TabItem-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--/>-->
-    <!--</android.support.design.widget.TabLayout>-->
-
-    <!--<android.support.v4.view.ViewPager-->
-        <!--android:layout_below="@+id/tabss"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:id="@+id/mainactivity_viewpager"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-         <!--/>-->
 
 
 <FrameLayout

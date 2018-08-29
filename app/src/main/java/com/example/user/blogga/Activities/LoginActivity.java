@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(validate_email() && validate_password()){
                     login_dialog.setTitle("Validating Information");
                     login_dialog.setMessage("Please wait while we validate your info");
+                    login_dialog.setCanceledOnTouchOutside(false);
                     login_dialog.show();
                     mAuth.signInWithEmailAndPassword(email_address.getText().toString(), password.getText().toString())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

@@ -66,6 +66,7 @@ public class events_nav_fragment extends Fragment {
     private SwipeRefreshLayout swipe_refresh;
     private ProgressBar bar;
     private View view;
+    private String event_desc = null;
 
 
 
@@ -103,7 +104,7 @@ public class events_nav_fragment extends Fragment {
                     .show();
         }
 
-        //TODO ADD DESCRIPTION PRONTO!! in event model
+       //TODO NEXT IS EITHER DARK THEME OR PUSH NOTIFICATIONS!!
 
 
         swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -217,7 +218,7 @@ public class events_nav_fragment extends Fragment {
                     bar.setVisibility(View.VISIBLE);
 
                     if(snap.child("event_title").exists() && snap.child("event_location").exists() && snap.child("event_date").exists()
-                            && snap.child("u_id").exists() && snap.child("event_image").exists()
+                            && snap.child("u_id").exists() && snap.child("event_image").exists() && snap.child("event_desc").exists()
                             ){
 
 
@@ -225,9 +226,21 @@ public class events_nav_fragment extends Fragment {
                         final String event_location = snap.child("event_location").getValue().toString();
                         final String event_date = snap.child("event_date").getValue().toString();
                         final String u_id = snap.child("u_id").getValue().toString();
+
                         final String post_key = snap.getKey();
+
+//                        if(snap.child("event_desc").exists()){
+//                             event_desc = snap.child("event_desc").getValue().toString();
+//                        }
+//                        else{
+//                            event_desc ="No description supplied!";
+//                        }
+
+                        final String _desc = snap.child("event_desc").getValue().toString();
+
                         final String post_time = snap.child("timestamp").getValue().toString();
                         final String event_image = snap.child("event_image").getValue().toString();
+                        final String event_image_thumb = snap.child("event_image_thumb").getValue().toString();
 
                         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
                         ref.child(u_id).addValueEventListener(new ValueEventListener() {
@@ -236,7 +249,9 @@ public class events_nav_fragment extends Fragment {
                                 String user_name = dataSnapshot.child("Display Name").getValue().toString();
                                 String user_image = dataSnapshot.child("Thumbnails").getValue().toString();
 
-                                model_list.add(0 ,new EventsModel(event_title, event_date, event_location, u_id, event_image, user_image, user_name, post_time, post_key));
+                                model_list.add(0 ,new EventsModel(event_title, event_date,
+                                        event_location, u_id, event_image, user_image,
+                                        user_name, post_time, post_key, _desc, event_image_thumb));
 
                                 adapter.notifyDataSetChanged();
                                 bar.setVisibility(View.GONE);

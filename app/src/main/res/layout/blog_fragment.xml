@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/NonToolBarLightTheme">
 
     <android.support.design.widget.TabLayout
     android:id="@+id/tabss"
@@ -39,7 +40,8 @@
     android:id="@+id/mainactivity_viewpager"
     android:layout_height="match_parent"
     android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    />
+    android:layout_centerHorizontal="true" android:theme="@style/NonToolBarLightTheme"
+
+        />
 
 </RelativeLayout>

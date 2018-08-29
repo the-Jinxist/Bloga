@@ -2,14 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/NonToolBarLightTheme"
+
+    >
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/events_loading_layout"
-        android:background="#fff">
+        android:background="#fff"
+        android:theme="@style/NonToolBarLightTheme">
 
         <ProgressBar
             android:layout_width="60dp"
@@ -27,7 +31,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/events_recycler_layout"
-        android:visibility="invisible">
+        android:visibility="invisible"
+        android:background="#fff"
+        android:theme="@style/NonToolBarLightTheme">
 
         <ProgressBar
             android:id="@+id/progressBar2"
@@ -80,7 +86,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/events_getstarted_layout"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:background="#fff"
+        android:theme="@style/NonToolBarLightTheme">
 
         <ImageView
             android:layout_width="100dp"
@@ -122,9 +130,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#97000000"
+        android:background="#fff"
         android:id="@+id/select_school_layout"
         android:visibility="gone"
+        android:theme="@style/NonToolBarLightTheme"
 
         >
 

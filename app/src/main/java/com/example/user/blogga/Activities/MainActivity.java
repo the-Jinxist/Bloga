@@ -57,12 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private CircleImageView user_image, nav_user_image;
     private TextView chat;
     private View header_view;
-    private TextView nav_user_display_name, nav_user_staus;
-    private HomeFragment homeFragment;
-    private FloatingActionButton fab;
-    private Button button;
 
-    private List<android.support.v4.app.Fragment> mFragmets;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,24 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startService(new Intent(this, Notification.class));
 
         dbase_ref = FirebaseDatabase.getInstance().getReference("Users");
-//        button = findViewById(R.id.launch_locations);
-//
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
-//                Intent i = null;
-//                try {
-//                    i = builder.build(MainActivity.this);
-//                    startActivityForResult(i, 123);
-//                } catch (GooglePlayServicesRepairableException e) {
-//                    e.printStackTrace();
-//                } catch (GooglePlayServicesNotAvailableException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-//        });
+
 
         Dispatcher.start_notification_service(this);
 

@@ -44,8 +44,8 @@ import java.io.IOException;
 import id.zelory.compressor.Compressor;
 
 public class AddEventsActivity extends AppCompatActivity {
-    private EditText event_title, event_location, event_date;
-    private TextInputLayout event_title_layout, event_location_layout, event_date_layout;
+    private EditText event_title, event_location, event_date, event_desc;
+    private TextInputLayout event_title_layout, event_location_layout, event_date_layout, add_event_desc_layout;
     private Uri result_uri;
     private Button add_event_btn;
     private DatabaseReference events_ref;
@@ -71,10 +71,12 @@ public class AddEventsActivity extends AppCompatActivity {
         event_title_layout = findViewById(R.id.add_event_edit_text_layout);
         event_location_layout = findViewById(R.id.add_event_location_layout);
         event_date_layout = findViewById(R.id.add_event_date_layout);
+        add_event_desc_layout = findViewById(R.id.add_event_desc_layout);
 
         event_title = findViewById(R.id.add_event_title);
         event_location = findViewById(R.id.add_event_location);
         event_date = findViewById(R.id.add_event_date);
+        event_desc = findViewById(R.id.add_event_desc);
         add_event_image_btn = findViewById(R.id.add_event_image_btn);
         add_events_image = findViewById(R.id.add_events_imageview);
 
@@ -114,9 +116,8 @@ public class AddEventsActivity extends AppCompatActivity {
                         && validate_inputs(event_location, event_location_layout, "Please specify your event's location")
                         && validate_inputs(event_date, event_date_layout, "Please specify your event's layout")
                         && result_uri != null
+                        && validate_inputs(event_desc, add_event_desc_layout, "Please specify your event's description")
                         ){
-
-                    //TODO ADD EVENT DESCRIPTION AND HOOK STUFF UP
 
                     ProgressDialog dialog = new ProgressDialog(AddEventsActivity.this);
                     dialog.setMessage("Adding your event!");
@@ -125,9 +126,10 @@ public class AddEventsActivity extends AppCompatActivity {
                     String event_title_text = event_title.getText().toString();
                     String event_location_text = event_location.getText().toString();
                     String event_date_text = event_date.getText().toString();
+                    String _event_desc = event_desc.getText().toString();
 
                     DatabaseReference add_event_ref = events_ref.child("FUTA").push();
-                    store_cake_info(add_event_ref, event_title_text, event_location_text, event_date_text, dialog, result_uri);
+                    store_cake_info(add_event_ref, event_title_text, event_location_text, event_date_text, dialog, result_uri, _event_desc);
 
                 }
             }
@@ -189,6 +191,7 @@ public class AddEventsActivity extends AppCompatActivity {
     }
 
 
+    //Sigh. Must not be touched
     public void save_thumb_and_image(final DatabaseReference _ref_to_use, Uri _result_uri, final ProgressDialog _dialog){
 
         String key = _ref_to_use.getKey();
@@ -200,14 +203,14 @@ public class AddEventsActivity extends AppCompatActivity {
             thumb_bitmap = new Compressor(this)
                     .setMaxWidth(200)
                     .setMaxHeight(200)
-                    .setQuality(50)
+                    .setQuality(10)
                     .compressToBitmap(thumb_path);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        thumb_bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos);
+        thumb_bitmap.compress(Bitmap.CompressFormat.JPEG, 10, baos);
         final byte[] thumb_byte = baos.toByteArray();
 
         StorageReference photo_path = reference.child("photo");
@@ -257,18 +260,22 @@ public class AddEventsActivity extends AppCompatActivity {
 
     }
 
+    //Lol, Just leave the name like that.. Kinda torn between two projects
     public void store_cake_info(final DatabaseReference _ref_to_use, final String event_title,
                                 String event_location, String event_date,
-                                final ProgressDialog _dialog, final Uri _result_uri){
+                                final ProgressDialog _dialog, final Uri _result_uri, String _event_desc){
 
 
         _ref_to_use.child("event_title").setValue(event_title);
         _ref_to_use.child("event_location").setValue(event_location);
+        _ref_to_use.child("event_desc").setValue(_event_desc);
         _ref_to_use.child("u_id").setValue(auth.getCurrentUser().getUid());
         _ref_to_use.child("timestamp").setValue(ServerValue.TIMESTAMP);
         _ref_to_use.child("event_date").setValue(event_date).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
+
+                //If not done like this shit will happen
                 if(task.isSuccessful()){
                     save_thumb_and_image(_ref_to_use, _result_uri, _dialog);
                 }

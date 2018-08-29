@@ -51,7 +51,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="new@gmail.com"
-            android:gravity="center"
             android:layout_alignStart="@id/nav_header_user_name"
             android:layout_below="@id/nav_header_user_name"
             android:textColor="#fff"/>

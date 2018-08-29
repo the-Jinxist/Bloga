@@ -55,179 +55,455 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         android:id="@+id/post_nested_view"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <RelativeLayout
-                android:id="@+id/event_desc_user_info"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorPrimary">
+                android:layout_height="370dp"
+                android:id="@+id/intent_act_post_image_layout"
+                >
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/event_desc_user_image"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:src="@drawable/placeholder" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:id="@+id/event_poster_name"
-                    android:layout_marginStart="10dp"
-                    android:layout_toEndOf="@id/event_desc_user_image"
-                    android:text="Username"
-                    android:textColor="#000"
-                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@drawable/community_bg"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/event_desc_event_image"
+                    />
 
                 <ImageButton
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_arrow_back_black_24dp"
+                    android:tint="#fff"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/event_desc_user_image"
+                    android:src="@drawable/placeholder"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="22dp"
+                    />
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_share_black_24dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@android:color/transparent"/>
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@id/event_desc_user_image">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="#000"
+                        android:id="@+id/event_poster_name"
+
+                        android:text="UserName"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13sp"
+                        android:text="12/16/2018"
+                        android:textColor="#838383"
+                        android:layout_below="@id/event_poster_name"
+                        />
+
+                </RelativeLayout>
+
+
+
 
             </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/event_desc_event_image"
+            <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/event_desc_user_info"
-                android:scaleType="fitCenter"
-                android:background="@android:color/transparent"
-                android:src="@drawable/placeholderblogimage" />
+                android:layout_below="@id/intent_act_post_image_layout">
 
-            <RelativeLayout
-                android:id="@+id/event_desc_event_name_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/event_desc_event_image"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp">
-                <ImageView
-                    android:id="@+id/event_desc_name_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/ic_info_outline_black_24dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:padding="5dp">
 
-                <TextView
-                    android:id="@+id/event_desc_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/event_desc_name_label"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/event_desc_name_label"
-                    android:text="The Death Stranding Reveal Trailer"
-                    android:textColor="#000"
-                    android:textSize="15sp" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:id="@+id/event_desc_title_layout"
+                        android:layout_margin="5dp">
 
-            </RelativeLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error_outline_black_24dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/event_desc_name"
+                                android:text="New Borrusia Dortmunt kit reveal"
+                                android:textColor="#000"
+                                android:layout_marginStart="5dp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                />
+
+                        </LinearLayout>
 
 
-            <RelativeLayout
-                android:id="@+id/event_desc_event_time_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/event_desc_event_name_layout"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp">
-                <ImageView
-                    android:id="@+id/event_desc_time_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/ic_date_range_black_24dp" />
 
-                <TextView
-                    android:id="@+id/event_desc_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/event_desc_time_label"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/event_desc_time_label"
-                    android:text="2nd of Febuary, 2018"
-                    android:textColor="#000"
-                    android:textSize="15sp" />
 
-            </RelativeLayout>
+                    </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/event_desc_event_desc_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/event_desc_event_time_layout"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp">
-                <ImageView
-                    android:id="@+id/event_desc_desc_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/ic_more_horiz_black_24dp" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:id="@+id/event_desc_time_layout"
+                        android:layout_below="@id/event_desc_layout"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp">
 
-                <TextView
-                    android:id="@+id/event_desc_desc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/event_desc_desc_label"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/event_desc_desc_label"
-                    android:text="This party is being hosted in the grand house of the lelo shelor of the house of shref the 3rd!"
-                    android:textColor="#000"
-                    android:textSize="15sp" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_date_range_black_24dp"/>
 
-            </RelativeLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12.198.2019"
+                                android:id="@+id/event_desc_time"
+                                android:textColor="#000"
+                                android:layout_marginStart="5dp"
+                                android:layout_gravity="center"
+                                />
 
-            <RelativeLayout
-                android:id="@+id/event_desc_event_location_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/event_desc_event_desc_layout"
-                android:layout_marginBottom="100dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp">
-                <ImageView
-                    android:id="@+id/event_desc_location_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/ic_location_on_black_24dp" />
+                        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/event_desc_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/event_desc_location_label"
-                    android:layout_centerVertical="true"
-                    android:layout_toEndOf="@id/event_desc_location_label"
-                    android:text="Duloc, Walt Disney.."
-                    android:textColor="#000"
-                    android:textSize="15sp" />
 
-            </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:id="@+id/event_location_layout"
+                        android:layout_below="@id/event_desc_time_layout"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_location_on_black_24dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dortmund, Germany"
+                                android:textColor="#000"
+                                android:id="@+id/event_desc_location"
+                                android:layout_marginStart="5dp"
+                                android:layout_gravity="center"
+                                />
+
+                        </LinearLayout>
+
+
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:id="@+id/event_desc_layout"
+                        android:layout_below="@id/event_desc_title_layout"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_more_horiz_black_24dp"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="This event is only available to die hard fans and daring journalists"
+                                android:textColor="#000"
+                                android:id="@+id/event_desc_desc"
+                                android:layout_marginStart="5dp"
+                                android:layout_gravity="center"
+                                />
+
+                        </LinearLayout>
+
+
+
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#ccc"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentBottom="true"
+                        />
+                </RelativeLayout>
+            </ScrollView>
+
+
 
         </RelativeLayout>
+
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_height="match_parent">-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/event_desc_user_info"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dp"-->
+                <!--android:background="@color/colorPrimary">-->
+
+                <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                    <!--android:id="@+id/event_desc_user_image"-->
+                    <!--android:layout_width="30dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginStart="20dp"-->
+                    <!--android:src="@drawable/placeholder" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:id="@+id/event_poster_name"-->
+                    <!--android:layout_marginStart="10dp"-->
+                    <!--android:layout_toEndOf="@id/event_desc_user_image"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#000"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<ImageButton-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:src="@drawable/ic_share_black_24dp"-->
+                    <!--android:layout_marginEnd="20dp"-->
+                    <!--android:background="@android:color/transparent"/>-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="330dp"-->
+                <!--android:id="@+id/event_desc_event_image_layout"-->
+                <!--android:layout_below="@id/event_desc_user_info"-->
+                <!--&gt;-->
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="#ccc"-->
+                    <!--android:layout_alignParentTop="true"/>-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/event_desc_event_image"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+
+                    <!--android:scaleType="fitCenter"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:src="@drawable/placeholderblogimage" />-->
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="#ccc"-->
+                    <!--android:layout_alignParentBottom="true"/>-->
+
+            <!--</RelativeLayout>-->
+
+
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/event_desc_event_name_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/event_desc_event_image_layout"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginTop="10dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/event_desc_name_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/ic_info_outline_black_24dp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/event_desc_name"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignTop="@id/event_desc_name_label"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toEndOf="@id/event_desc_name_label"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#000"-->
+                    <!--android:textSize="15sp" />-->
+
+            <!--</RelativeLayout>-->
+
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/event_desc_event_time_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/event_desc_event_name_layout"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginTop="5dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/event_desc_time_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/ic_date_range_black_24dp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/event_desc_time"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignTop="@id/event_desc_time_label"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toEndOf="@id/event_desc_time_label"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#000"-->
+                    <!--android:textSize="15sp" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/event_desc_event_desc_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/event_desc_event_time_layout"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginTop="5dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/event_desc_desc_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/ic_more_horiz_black_24dp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/event_desc_desc"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignTop="@id/event_desc_desc_label"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toEndOf="@id/event_desc_desc_label"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#000"-->
+                    <!--android:textSize="15sp" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/event_desc_event_location_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/event_desc_event_desc_layout"-->
+                <!--android:layout_marginBottom="100dp"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginTop="5dp">-->
+                <!--<ImageView-->
+                    <!--android:id="@+id/event_desc_location_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/ic_location_on_black_24dp" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/event_desc_location"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignTop="@id/event_desc_location_label"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toEndOf="@id/event_desc_location_label"-->
+                    <!--android:text=""-->
+                    <!--android:textColor="#000"-->
+                    <!--android:textSize="15sp" />-->
+
+            <!--</RelativeLayout>-->
+
+        <!--</RelativeLayout>-->
 
 
     </android.support.v4.widget.NestedScrollView>

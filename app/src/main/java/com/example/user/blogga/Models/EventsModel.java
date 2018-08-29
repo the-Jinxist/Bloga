@@ -5,9 +5,9 @@ package com.example.user.blogga.Models;
  */
 
 public class EventsModel {
-    private String event_name, event_time, event_location, u_id, event_image, user_image, user_name, post_time, post_key;
+    private String event_name, event_time, event_location, u_id, event_image, user_image, user_name, post_time, post_key, event_desc, event_thumb;
 
-    public EventsModel(String event_name, String event_time, String event_location, String u_id, String event_image, String user_image, String user_name, String post_time, String post_key) {
+    public EventsModel(String event_name, String event_time, String event_location, String u_id, String event_image, String user_image, String user_name, String post_time, String post_key, String event_desc, String event_thumb) {
         this.event_name = event_name;
         this.event_time = event_time;
         this.event_location = event_location;
@@ -17,6 +17,8 @@ public class EventsModel {
         this.user_name = user_name;
         this.post_time = post_time;
         this.post_key = post_key;
+        this.event_desc = event_desc;
+        this.event_thumb = event_thumb;
     }
 
     public String getEvent_name() {
@@ -89,5 +91,21 @@ public class EventsModel {
 
     public void setPost_key(String post_key) {
         this.post_key = post_key;
+    }
+
+    public String getEvent_desc() {
+        return event_desc;
+    }
+
+    public void setEvent_desc(String event_desc) {
+        this.event_desc = event_desc;
+    }
+
+    public String getEvent_thumb() {
+        return event_thumb;
+    }
+
+    public void setEvent_thumb(String event_thumb) {
+        this.event_thumb = event_thumb;
     }
 }
